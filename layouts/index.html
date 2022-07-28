@@ -3,21 +3,33 @@
 {{ end }}
 
 {{ define "main" }}
-    <main aria-role="main">
-        <div>
-            {{ if .Site.Params.Portrait.Path }}
+  <main class="main-page">
+    <div>
+        {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
-            {{ end }}
+        {{ end }}
 
-            <h1>{{ .Site.Title }}</h1>
+        <h1 class="main-page-title">
+            {{ .Site.Title }}
+        </h1>
 
-            {{ partial "subtitle.html" . }}
+        <center>
+            <button type="button" onclick="window.location.href='/contact';">
+                Contact Us!
+            </button>
+        </center>
 
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
-                </div>
-            {{- end }}
+        {{- with .Site.Params.social }}
+        <div>
+            {{ partial "social-icons.html" . }}
         </div>
-    </main>
+        {{- end }}
+
+        <div class="main-page-content">
+            <p>{{ .Site.Params.homeSubtitle_1 }}</p>
+            <p>{{ .Site.Params.homeSubtitle_2 }}</p>
+            <p>{{ .Site.Params.homeSubtitle_3 }}</p>
+        </div>
+    </div>
+  </main>
 {{ end }}
