@@ -14,7 +14,7 @@
         </h1>
 
         <p>
-            <center><img src="https://amwma.netlify.app/img/amwma_border.png" alt="the AMWMA logo" width="300" height="300"></center>
+            <center><img src="{{< baseurl >}}/img/amwma_border.png" alt="the AMWMA logo" width="300" height="300"></center>
         </p>
 
         <center>
@@ -34,6 +34,12 @@
             <p>{{ .Site.Params.homeSubtitle_2 }}</p>
             <p>{{ .Site.Params.homeSubtitle_3 }}</p>
         </div>
+
+        <p>
+            <img src="{{< baseurl >}}/img/wtsda_approved.png" alt="the WTSDA approved box" height="52" style="float: left; margin-left: 25px; margin-top: 24px;">
+            <img src="{{< baseurl >}}/img/wtsda_logo.png" alt="the WTSDA logo" height="100" style="float: right; margin-right: 25px;">
+        </p>
+
     </div>
   </main>
 {{ end }}
